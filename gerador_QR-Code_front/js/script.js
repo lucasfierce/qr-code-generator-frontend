@@ -10,10 +10,11 @@ function generateQRCode(){
 
     qrCodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${qrCodeInput.value}`
 
-    if(qrCodeInput){
+    qrCodeImg.addEventListener("load", ()=>{
         mainContainer.classList.add("active");
-        qrCodeBtn.innerText = "Código criado!"
-    }
+        qrCodeBtn.innerText = "Código criado!";
+    });
+        
 
     console.log(qrCodeInput.value);
 }
